@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,9 +22,13 @@
     <ClInclude Include="CameraDemo.h" />
     <ClInclude Include="CameraScript.h" />
     <ClInclude Include="ConstantBufferDemo.h" />
+    <ClInclude Include="HeightMapDemo.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="MeshDemo.h" />
+    <ClInclude Include="NormalDemo.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="QuadDemo.h" />
+    <ClInclude Include="SamplerDemo.h" />
     <ClInclude Include="TextureDemo.h" />
     <ClInclude Include="TriangleDemo.h" />
   </ItemGroup>
@@ -32,17 +36,24 @@
     <ClCompile Include="CameraDemo.cpp" />
     <ClCompile Include="CameraScript.cpp" />
     <ClCompile Include="ConstantBufferDemo.cpp" />
+    <ClCompile Include="HeightMapDemo.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MeshDemo.cpp" />
+    <ClCompile Include="NormalDemo.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="QuadDemo.cpp" />
+    <ClCompile Include="SamplerDemo.cpp" />
     <ClCompile Include="TextureDemo.cpp" />
     <ClCompile Include="TriangleDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\ConstantBuffer.fx" />
+    <FxCompile Include="..\Shaders\Normal.fx" />
     <FxCompile Include="..\Shaders\Quad.fx" />
+    <FxCompile Include="..\Shaders\Sampler.fx" />
+    <FxCompile Include="..\Shaders\Terrain.fx" />
     <FxCompile Include="..\Shaders\Triangle.fx">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
