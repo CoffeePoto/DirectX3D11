@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AmbientDemo.h" />
     <ClInclude Include="CameraDemo.h" />
     <ClInclude Include="CameraScript.h" />
     <ClInclude Include="ConstantBufferDemo.h" />
     <ClInclude Include="DepthStencilDemo.h" />
+    <ClInclude Include="DiffuseDemo.h" />
     <ClInclude Include="GlobalTestDemo.h" />
     <ClInclude Include="HeightMapDemo.h" />
     <ClInclude Include="Main.h" />
@@ -31,14 +33,17 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="QuadDemo.h" />
     <ClInclude Include="SamplerDemo.h" />
+    <ClInclude Include="SpecularDemo.h" />
     <ClInclude Include="TextureDemo.h" />
     <ClInclude Include="TriangleDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AmbientDemo.cpp" />
     <ClCompile Include="CameraDemo.cpp" />
     <ClCompile Include="CameraScript.cpp" />
     <ClCompile Include="ConstantBufferDemo.cpp" />
     <ClCompile Include="DepthStencilDemo.cpp" />
+    <ClCompile Include="DiffuseDemo.cpp" />
     <ClCompile Include="GlobalTestDemo.cpp" />
     <ClCompile Include="HeightMapDemo.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -49,6 +54,7 @@
     </ClCompile>
     <ClCompile Include="QuadDemo.cpp" />
     <ClCompile Include="SamplerDemo.cpp" />
+    <ClCompile Include="SpecularDemo.cpp" />
     <ClCompile Include="TextureDemo.cpp" />
     <ClCompile Include="TriangleDemo.cpp" />
   </ItemGroup>
@@ -56,6 +62,9 @@
     <FxCompile Include="..\Shaders\ConstantBuffer.fx" />
     <FxCompile Include="..\Shaders\Global.fx" />
     <FxCompile Include="..\Shaders\GlobalTestShader.fx" />
+    <FxCompile Include="..\Shaders\Lighting_Ambient.fx" />
+    <FxCompile Include="..\Shaders\Lighting_Diffuse.fx" />
+    <FxCompile Include="..\Shaders\Lighting_Specular.fx" />
     <FxCompile Include="..\Shaders\Normal.fx" />
     <FxCompile Include="..\Shaders\Quad.fx" />
     <FxCompile Include="..\Shaders\Sampler.fx" />
