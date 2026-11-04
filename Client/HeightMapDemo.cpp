@@ -9,8 +9,8 @@ void HeightMapDemo::Init()
 	_shader = make_shared<Shader>(L"Terrain.fx");
 
 	//Texture
-	_texture = RESOURCES->Load<Texture>(L"Ocean", L"..\\Resources\\Texture\\Ocean.jpg");
-	//_texture = RESOURCES->Load<Texture>(L"Grass", L"..\\Resources\\Texture\\Terrain\\grass.jpg");
+	//_texture = RESOURCES->Load<Texture>(L"Ocean", L"..\\Resources\\Texture\\Ocean.jpg");
+	_texture = RESOURCES->Load<Texture>(L"Grass", L"..\\Resources\\Texture\\Terrain\\grass.jpg");
 	_heightMap = RESOURCES->Load<Texture>(L"Height", L"..\\Resources\\Texture\\Terrain\\height.png");
 
 	const int32 width = _heightMap->GetSize().x;
