@@ -64,7 +64,7 @@ void AmbientDemo::Update()
 	RENDER->Update();
 
 	//
-	Vec4 lightAmbient(0.1f, 0.5f, 1.f, 1.f);
+	Vec4 lightAmbient(1.f, 1.f, 1.f, 1.f);
 	_shader->GetVector("LightAmbient")->SetFloatVector((float*)&lightAmbient);
 
 	{

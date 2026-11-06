@@ -36,9 +36,6 @@
     <ClInclude Include="Main.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="CameraScript.h">
-      <Filter>Main\Camera</Filter>
-    </ClInclude>
     <ClInclude Include="CameraDemo.h">
       <Filter>Game\Week1</Filter>
     </ClInclude>
@@ -79,6 +76,18 @@
       <Filter>Game\Week2</Filter>
     </ClInclude>
     <ClInclude Include="SpecularDemo.h">
+      <Filter>Game\Week2</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraScript.h">
+      <Filter>Main\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="EmissiveDemo.h">
+      <Filter>Game\Week2</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingDemo.h">
+      <Filter>Game\Week2</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialDemo.h">
       <Filter>Game\Week2</Filter>
     </ClInclude>
   </ItemGroup>
@@ -134,6 +143,15 @@
     <ClCompile Include="SpecularDemo.cpp">
       <Filter>Game\Week2</Filter>
     </ClCompile>
+    <ClCompile Include="EmissiveDemo.cpp">
+      <Filter>Game\Week2</Filter>
+    </ClCompile>
+    <ClCompile Include="LightingDemo.cpp">
+      <Filter>Game\Week2</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialDemo.cpp">
+      <Filter>Game\Week2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\ConstantBuffer.fx">
@@ -170,6 +188,15 @@
       <Filter>Shaders\Week2</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\Lighting_Specular.fx">
+      <Filter>Shaders\Week2</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\Lighting_Emissive.fx">
+      <Filter>Shaders\Week2</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\Light.fx">
+      <Filter>Shaders\Common</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\Lighting.fx">
       <Filter>Shaders\Week2</Filter>
     </FxCompile>
   </ItemGroup>
