@@ -6,6 +6,7 @@ cbuffer GlobalBuffer
     matrix V;
     matrix P;
     matrix VP;
+    matrix Vinv;
 };
 
 //V,P에 비해 입력이 자주 발생하므로 따로 분리
@@ -39,6 +40,14 @@ struct VertexTextureNormal
     float3 normal : NORMAL;
 };
 
+struct VertexTextureNormalTangent
+{
+    float4 position : POSITION;
+    float2 uv : TEXCOORD;
+    float3 normal : NORMAL;
+    float3 tangent : TANGENT;
+};
+
 //VertexOutput
 struct VertexOutput
 {
@@ -53,6 +62,7 @@ struct MeshOutput
     float3 worldPosition : POSITION1;
     float2 uv : TEXCOORD;
     float3 normal : NORMAL;
+    float3 tangent : TANGENT;
 };
 
 //SamplerState
@@ -87,7 +97,7 @@ pass name                                           \
 //Function
 float3 CameraPosition()
 {
-    return -V._41_42_43;
+    return Vinv._41_42_43;
 }
 
 #endif

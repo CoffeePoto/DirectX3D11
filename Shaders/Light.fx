@@ -50,7 +50,7 @@ float4 ComputeLight(float3 normal, float2 uv, float3 worldPosition)
     
     // Ambient
     {
-        float4 color = GlobalLight.ambient * GlobalLight.ambient;
+        float4 color = GlobalLight.ambient * Material.ambient;
         ambientColor = DiffuseMap.Sample(LinearSampler, uv) * color;
     }
     
@@ -63,13 +63,15 @@ float4 ComputeLight(float3 normal, float2 uv, float3 worldPosition)
     
     // Specular
     {
-        float3 R = reflect(GlobalLight.direction, normal);
+        //float3 R = reflect(GlobalLight.direction, normal);
+        float3 R = GlobalLight.direction - (2 * normal * dot(GlobalLight.direction, normal));
+        R = normalize(R);
     
         float3 cameraPosition = CameraPosition();
         float3 E = normalize(cameraPosition - worldPosition);
     
         float value = saturate(dot(R, E)); // clamp 0 ~ 1
-        float specular = pow(value, 3);
+        float specular = pow(value, 10);
         
         specularColor = GlobalLight.specular * Material.specular * specular;
     }
@@ -84,12 +86,31 @@ float4 ComputeLight(float3 normal, float2 uv, float3 worldPosition)
     
         // min, max, x
         emissive = smoothstep(0.0f, 1.0f, emissive);
-        emissive = pow(emissive, 3);
+        emissive = pow(emissive, 2);
     
-        emissiveColor = Material.emissive * emissive;
+        emissiveColor = GlobalLight.emissive * Material.emissive * emissive;
     }
     
     return ambientColor + diffuseColor + specularColor + emissiveColor;
+}
+
+void ComputeNoramlMapping(inout float3 normal, float3 tangent, float2 uv)
+{
+    // [0,255] 범위에서 [0,1]로 변환
+    float4 map = NormalMap.Sample(LinearSampler, uv);
+    if (any(map.rgb) == false)
+        return;
+    
+    float3 N = normalize(normal);// Z
+    float3 T = normalize(tangent);// X
+    float3 B = normalize(cross(N, T));// Y
+    float3x3 TBN = float3x3(T, B, N); // Tangent Space -> World Space
+
+    //[0, 1]범위에서 [-1, 1]범위로 치환
+    float3 tangentSpaceNormal = (map.rgb * 2.0f - 1.f);
+    float3 worldNormal = mul(tangentSpaceNormal, TBN);
+    
+    normal = worldNormal;
 }
 
 #endif
